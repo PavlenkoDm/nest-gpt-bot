@@ -56,7 +56,7 @@ export class ChatgptService {
       map(({ data }) => data.choices[0].message.content.trim()),
       catchError((err) => {
         this.logger.error(err);
-        return of('Error');
+        return of('Server Error');
       }),
     );
   }
